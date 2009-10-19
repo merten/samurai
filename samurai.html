@@ -1,0 +1,275 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module samurai</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>samurai</strong></big></big> (version devel)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/merten/python/samurai/samurai.py">/home/merten/python/samurai/samurai.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;class&nbsp;is&nbsp;a&nbsp;interface&nbsp;to&nbsp;the&nbsp;basic&nbsp;sipgate&nbsp;VOIP&nbsp;API.<br>
+-&nbsp;Use&nbsp;the&nbsp;<a href="#session">session</a>&nbsp;management&nbsp;to&nbsp;set&nbsp;calls<br>
+-&nbsp;Use&nbsp;the&nbsp;<a href="#phonebook">phonebook</a>&nbsp;to&nbsp;manage&nbsp;contacts<br>
+&nbsp;<br>
+Dependencies:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;vobject</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="vobject.html">vobject</a><br>
+</td><td width="25%" valign=top><a href="xmlrpclib.html">xmlrpclib</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="exceptions.html#Exception">exceptions.Exception</a>(<a href="exceptions.html#BaseException">exceptions.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="samurai.html#InvalidNumber">InvalidNumber</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="samurai.html#account">account</a>
+</font></dt><dt><font face="helvetica, arial"><a href="samurai.html#phonebook">phonebook</a>
+</font></dt><dt><font face="helvetica, arial"><a href="samurai.html#server">server</a>
+</font></dt><dt><font face="helvetica, arial"><a href="samurai.html#session">session</a>
+</font></dt><dt><font face="helvetica, arial"><a href="samurai.html#uri">uri</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InvalidNumber">class <strong>InvalidNumber</strong></a>(<a href="exceptions.html#Exception">exceptions.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="exceptions.html#Exception">Exception</a>&nbsp;for&nbsp;number&nbsp;parser<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="samurai.html#InvalidNumber">InvalidNumber</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+<dd><a href="exceptions.html#BaseException">exceptions.BaseException</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="InvalidNumber-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object at 0x8226dc0&gt;<dd><tt>T.<a href="#InvalidNumber-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><a name="InvalidNumber-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__reduce__"><strong>__reduce__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InvalidNumber-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InvalidNumber-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#InvalidNumber-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<dl><dt><a name="InvalidNumber-__unicode__"><strong>__unicode__</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>message</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="account">class <strong>account</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Every&nbsp;instance&nbsp;of&nbsp;this&nbsp;class&nbsp;manages&nbsp;a&nbsp;single&nbsp;sipgate&nbsp;acount<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="account-__init__"><strong>__init__</strong></a>(self, username<font color="#909090">=''</font>, password<font color="#909090">=''</font>)</dt><dd><tt>Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username:&nbsp;username&nbsp;for&nbsp;your&nbsp;<a href="#account">account</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;password&nbsp;for&nbsp;your&nbsp;<a href="#account">account</a></tt></dd></dl>
+
+<dl><dt><a name="account-getServerStatus"><strong>getServerStatus</strong></a>(self)</dt><dd><tt>Returns:&nbsp;Dict&nbsp;of&nbsp;<a href="#server">server</a>&nbsp;status&nbsp;messages<br>
+Keys:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-SpecificationVersion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-ServerName<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-ServerVersion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-ServerVendor</tt></dd></dl>
+
+<dl><dt><a name="account-updateBalance"><strong>updateBalance</strong></a>(self)</dt><dd><tt>Update&nbsp;the&nbsp;local&nbsp;balance&nbsp;copy<br>
+set&nbsp;balance&nbsp;as&nbsp;specified&nbsp;in&nbsp;the&nbsp;samurai&nbsp;specification</tt></dd></dl>
+
+<dl><dt><a name="account-updateManagedURIs"><strong>updateManagedURIs</strong></a>(self)</dt><dd><tt>Update&nbsp;the&nbsp;list&nbsp;of&nbsp;managed&nbsp;URIs</tt></dd></dl>
+
+<dl><dt><a name="account-updatePhonebook"><strong>updatePhonebook</strong></a>(self)</dt><dd><tt>Update&nbsp;the&nbsp;local&nbsp;<a href="#phonebook">phonebook</a>&nbsp;copy</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>uri</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="phonebook">class <strong>phonebook</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;<a href="#phonebook">phonebook</a>&nbsp;&nbsp;management&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="phonebook-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;empty&nbsp;<a href="#phonebook">phonebook</a></tt></dd></dl>
+
+<dl><dt><a name="phonebook-addContact"><strong>addContact</strong></a>(self, entryID, entryHash, entry)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;vobject&nbsp;from&nbsp;vCard-string<br>
+also&nbsp;saves&nbsp;the&nbsp;entryID&nbsp;and&nbsp;entryHash&nbsp;in&nbsp;a&nbsp;dictionary</tt></dd></dl>
+
+<dl><dt><a name="phonebook-addEntry"><strong>addEntry</strong></a>(self, entry)</dt><dd><tt>Adds&nbsp;a&nbsp;new&nbsp;formated&nbsp;entry&nbsp;to&nbsp;the&nbsp;<a href="#phonebook">phonebook</a></tt></dd></dl>
+
+<dl><dt><a name="phonebook-getList"><strong>getList</strong></a>(self)</dt><dd><tt>Returns:<br>
+list&nbsp;of&nbsp;vobject&nbsp;vcards</tt></dd></dl>
+
+<dl><dt><a name="phonebook-searchName"><strong>searchName</strong></a>(self, name)</dt><dd><tt>Search&nbsp;for&nbsp;a&nbsp;name<br>
+returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;filtered&nbsp;<a href="#phonebook">phonebook</a></tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="server">class <strong>server</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Handler&nbsp;for&nbsp;<a href="#server">server</a>&nbsp;connection&nbsp;and&nbsp;<a href="#server">server</a>&nbsp;calls<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="server-__init__"><strong>__init__</strong></a>(self, username, password, serverURL<font color="#909090">='samurai.sipgate.net/RPC2'</font>)</dt><dd><tt>Initiates&nbsp;a&nbsp;new&nbsp;<a href="#server">server</a>&nbsp;connection<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username:&nbsp;username&nbsp;for&nbsp;your&nbsp;<a href="#account">account</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;password&nbsp;for&nbsp;your&nbsp;<a href="#account">account</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;serverURL:&nbsp;<a href="#server">server</a>&nbsp;URL&nbsp;if&nbsp;not&nbsp;default</tt></dd></dl>
+
+<dl><dt><a name="server-call"><strong>call</strong></a>(self, methodName, **kwargs)</dt><dd><tt>Call&nbsp;a&nbsp;method&nbsp;on&nbsp;the&nbsp;<a href="#server">server</a><br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;methodName:&nbsp;full&nbsp;method&nbsp;name&nbsp;&nbsp;e.g.&nbsp;'system.listMethods'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;method&nbsp;arguments</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="session">class <strong>session</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Manages&nbsp;SIP&nbsp;<a href="#session">session</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="session-__init__"><strong>__init__</strong></a>(self, account, sessionID, tos)</dt><dd><tt>Args:<br>
+<a href="#account">account</a>:&nbsp;Account&nbsp;assosiated&nbsp;to&nbsp;the&nbsp;<a href="#session">session</a><br>
+sessionID:&nbsp;The&nbsp;id&nbsp;of&nbsp;the&nbsp;<a href="#session">session</a><br>
+tos:&nbsp;The&nbsp;type&nbsp;of&nbsp;service&nbsp;used&nbsp;in&nbsp;this&nbsp;<a href="#session">session</a></tt></dd></dl>
+
+<dl><dt><a name="session-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;active&nbsp;<a href="#session">session</a>,&nbsp;check&nbsp;Status&nbsp;to&nbsp;verify</tt></dd></dl>
+
+<dl><dt><a name="session-getStatus"><strong>getStatus</strong></a>(self)</dt><dd><tt>Returns:&nbsp;The&nbsp;current&nbsp;<a href="#session">session</a>&nbsp;status&nbsp;string<br>
+if&nbsp;not&nbsp;successful&nbsp;None</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="uri">class <strong>uri</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Manages&nbsp;the&nbsp;SIP-URIs<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="uri-__init__"><strong>__init__</strong></a>(self, account, sip_uri, tos)</dt><dd><tt>Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#account">account</a>:&nbsp;Account&nbsp;assosiated&nbsp;to&nbsp;the&nbsp;<a href="#session">session</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;sip_uri:&nbsp;The&nbsp;unique&nbsp;SIP-URI<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tos:&nbsp;List&nbsp;of&nbsp;supported&nbsp;services</tt></dd></dl>
+
+<dl><dt><a name="uri-call"><strong>call</strong></a>(self, remote_uri)</dt><dd><tt>Initiate&nbsp;a&nbsp;new&nbsp;voice&nbsp;<a href="#session">session</a>&nbsp;to&nbsp;remote&nbsp;URI<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remote_uri:&nbsp;Target&nbsp;URI<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SessionID&nbsp;if&nbsp;successful&nbsp;otherwise&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="uri-fax"><strong>fax</strong></a>(self, remote_uri, filename)</dt><dd><tt>Initiate&nbsp;a&nbsp;new&nbsp;fax&nbsp;<a href="#session">session</a>&nbsp;to&nbsp;remote&nbsp;URI<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remote_uri:&nbsp;Target&nbsp;URI<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file:&nbsp;PDF&nbsp;filename<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SessionID&nbsp;if&nbsp;successful&nbsp;otherwise&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="uri-text"><strong>text</strong></a>(self, remote_uri, text<font color="#909090">=''</font>)</dt><dd><tt>Send&nbsp;a&nbsp;text&nbsp;message&nbsp;to&nbsp;remote&nbsp;URI<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remote_uri:&nbsp;Target&nbsp;URI<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text:&nbsp;The&nbsp;message<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SessionID&nbsp;if&nbsp;successful&nbsp;otherwise&nbsp;None</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-parseToURI"><strong>parseToURI</strong></a>(tel, domain<font color="#909090">='sipgate.de'</font>, country<font color="#909090">='+49'</font>, local<font color="#909090">='30'</font>)</dt><dd><tt>Parses&nbsp;a&nbsp;normal&nbsp;international&nbsp;phone&nbsp;number&nbsp;into&nbsp;a&nbsp;sipgate&nbsp;URI<br>
+Returns&nbsp;None&nbsp;if&nbsp;number&nbsp;not&nbsp;valid<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tel:&nbsp;telephone&nbsp;number&nbsp;as&nbsp;a&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;domian:&nbsp;provider&nbsp;Domain<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sip-url,&nbsp;None&nbsp;if&nbsp;telephone&nbsp;number&nbsp;is&nbsp;not&nbsp;valid</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>COUNTRY</strong> = '+49'<br>
+<strong>DOMAIN</strong> = 'sipgate.de'<br>
+<strong>LOCAL</strong> = '30'<br>
+<strong>SERVER_URL</strong> = 'samurai.sipgate.net/RPC2'<br>
+<strong>VALID_DIGITS</strong> = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')<br>
+<strong>__author__</strong> = 'merten@tabinin.eu'<br>
+<strong>__version__</strong> = 'devel'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">merten@tabinin.eu</td></tr></table>
+</body></html>
