@@ -22,7 +22,6 @@ Dependencies:
     
 Unfinished:
     - Change server answer handling to Exceptions
-    - set up a balance class
     Session
         - Multisession initiate
         - Scheduled session initiate
@@ -66,11 +65,7 @@ def parseToURI(tel, domain=DOMAIN, country=COUNTRY, local=LOCAL):
     '''
         
     '''Remove unvalid chars and spaces to make the number parseable.'''
-    tempTel = ''
-    for char in tel:
-        if char  in (VALID_DIGITS + ('+',)):
-            tempTel += char
-    tel = tempTel
+    tel = "".join([c for c in tel if c in VALID_DIGITS + ('+', )])
     
     '''Check for valid number '''
     localReg = re.search('^[1-9]\d+$',tel)
@@ -78,13 +73,14 @@ def parseToURI(tel, domain=DOMAIN, country=COUNTRY, local=LOCAL):
     countryReg = re.search('^(00|\+)[1-9]\d+$',tel)
     
     '''Format number into international format'''
-    if localReg is not None:            #number is a local number
+    if localReg :            #number is a local number
         tel = country + local + tel 
-    elif cityReg is not None:           #number is a city number
+    elif cityReg :           #number is a city number
         tel = tel.lstrip("0")           #remove leading zero
         tel = country + tel
-    elif countryReg is not None:        #number is an international number
+    elif countryReg :        #number is an international number
         tel = tel.lstrip("0")
+        tel = tel.lstrip("+")
     else:                               #number not valid
         raise InvalidNumberError("Invalid Number: " +  tel)
 
@@ -124,8 +120,8 @@ class Server():
         '''
         
         try:
-            expr = 'self.server.' + methodName + '(' + kwargs.__repr__() + ')'
-            return eval(expr)
+            method = getattr(self.server, methodName)
+            return method(kwargs)
         except socket.error as e:
             statusCode, statusString = e.errno , e.strerror
             return {'StatusCode' : statusCode, 'StatusString' : statusString }
@@ -203,7 +199,7 @@ class Account():
         answer = self.server.call('samurai.BalanceGet')
             
         if answer['StatusCode'] == 200:
-            self.balance = answer['CurrentBalance']
+            self.balance = Balance(answer['CurrentBalance'], answer['BalanceTime'])
         
         
 class URI():
@@ -336,12 +332,27 @@ class Session():
         
         if self.account.isAvailable('samurai.SessionClose'):
             answer = self.account.server.samurai.SessionClose(self.sessionID)
+            
+class Balance():
+    '''Representation of the  sipgate account balance.
+    
+    '''
+    
+    def __init__(self, balance, timeStamp ):
+        
+        self.timeStamp = timeStamp
+        self.amount = balance['TotalIncludingVat']
+        self.currency = balance['Currency']
+        
+    def __str__(self):
+        return "%.2f %s at %s" % (self.amount, self.currency, self.timeStamp)
 
 
 class Phonebook():
     '''Represents the phonebook on the sipgate server.
     With the basic account you can't upload any contacts so
-    it is useless for a read application.'''
+    it is useless for a read application.
+    '''
     
     def __init__(self):
         '''Creates a new empty phonebook '''
@@ -382,3 +393,6 @@ class Phonebook():
             vcardList.append(entry['vCard'])
             
         return vcardList
+        
+if __name__ == '__main__':
+    print __doc__
